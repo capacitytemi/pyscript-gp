@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Playground </title>
-    <!-- Import PyScript -->
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <!-- Import Python modules -->
-    <py-env>
-        - numpy
-        - pandas
-        - scikit-learn
-        - paths:
-            - src/helper.py
-    </py-env>
-
-</head>
-<body>
-    <!-- All your other HTML -->
-
-    <!-- Python Script Here -->
-    <py-script>
-        print("Hello world!")
+    <head>
+        <title> </title>
         
-        from helper import *
-        import numpy as np
-        a = [1, 3, 5]
-        print(np.power(a, 3))
+        <!-- Import PyScript -->
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
-        # Run this using "asyncio"
+        <!-- Import Python modules -->
 
-        async def main():
-            await micropip.install(["matplotlib", "numpy"])
+    </head>
+    <body>
+        <!-- All your other HTML -->
+        <div>
+            <h3 class="display-7">ML Model to Predict Car Price</h3>
+            <spam class="badge badge-pill badge-primary">PyScript</spam>
+            <spam class="badge badge-pill badge-secondary">Bootstrap</spam>
+        </div> 
+        
+        <h7>Select x and y variables: </h7>
+        <div>
+            <div class="form-group row">
+                <label for="inputx" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputx" placeholder="x">
+                </div>
+                <label for="inputy" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="inputy" placeholder="y">
+                </div>
+            </div>
+        </div>
 
-        await loop.run_until_complete(main())
+        <h7>Select chart type: </h7>
+        <div>
+            <div>
+                <select class="form-control" id="select">
+                    <option value="splot">Scatterplot</option>
+                    <option value="lplot">Lineplot</option>
+                    <option value="dist">Distribution</option>
+                    <option value="bplot">Barplot</option>
+                    <option value="boplot">Boxplot</option>
+                </select>
+            </div>
+        </div>
 
-        import matplotlib.pyplot as plt
-        import numpy as np
+        <div class="row">
+            <div class="col-sm-6 p-2 shadow ml-4 mr-4 mb-4 bg-white rounded mx-auto d-block">
+                <div id="chart1"></div>
+            </div>
+        </div>
 
-        x = np.linspace(0, 2 * np.pi, 100)
-        plt.plot(x, np.sin(x))
-        plt
-    </py-script>
-    <py-script src="./src/helper.py">
-    <py-repl>
-import numpy as np
-from matplotlib import pyplot as plt
-    </py-repl>
-    <py-repl>
-t = np.arange(0.0, 2.0, 0.01)
-s = 1 + np.sin(2 * np.pi * t)
-fig, ax = plt(subplots())
-ax.plot(t, s)
-fig
-    </py-repl>
-    <py-repl></py-repl>
+        <h7>Predict or price: </h7>
+        <div>
+            <form>
+                <div class="form-group row">
+                    <label for="year" class="col-sm-2 col-form-label">Year</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="year" placeholder=2021 default=2021>
+                    </div>
+                    <label for="tax" class="col-sm-2 col-form-label">Tax</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="tax" placeholder=2000 default=2000>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-</body>
-
+        <!-- Python Script Here -->
+    </body>
 </html>
