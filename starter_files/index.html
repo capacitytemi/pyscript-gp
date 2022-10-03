@@ -145,7 +145,7 @@
             def predict(year, mileage, tax, mpg, engineSize):
                 out = lr_model.predict(pd.Dataframe([[year, mileage, tax, mpg, engineSize]], columns=X_train.columns))[0]
 
-            pyscript.write("predtext", "${:,.2f}".format(out))  
+                pyscript.write("predtext", "${:,.2f}".format(out))  
                 
             from js import document
             from pyodide import create_proxy
