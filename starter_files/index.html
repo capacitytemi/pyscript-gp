@@ -149,7 +149,7 @@
 
 
             def predict(year, mileage, tax, mpg, engineSize):
-                out = lr_model.predict(pd.Dataframe([[year, mileage, tax, mpg, engineSize]], columns=X_train.columns))[0]
+                out = lr_model.predict(pd.DataFrame([[year, mileage, tax, mpg, engineSize]], columns=X_train.columns))[0]
 
                 pyscript.write("predtext", "${:,.2f}".format(out))  
                 
