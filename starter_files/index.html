@@ -123,7 +123,7 @@
 
             def plot(x, y, type):
                 fig, ax = plt.subplots()
-                if type =='plot':
+                if type =='splot':
                     sns.scatterplot(y=y, x=x, data=df, ax=ax, label=(x, y))
                 elif type=='lplot':
                     sns.lineplot(y=y, x=x, data=df, ax=ax, label=(x,y))
